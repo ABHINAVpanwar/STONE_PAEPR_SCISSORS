@@ -105,6 +105,11 @@
       </div>
     </section>
     <script>
+      const ps1 = new Audio();
+      ps1.src="BGM/PS1.mp3";
+      const ps2 = new Audio();
+      ps2.src="BGM/PS2.mp3";
+
       let C2 = document.getElementById("C1");
       let P1 = document.getElementById("P");
       let C1 = document.getElementById("C");
@@ -118,8 +123,10 @@
         C2.innerHTML = choice[c];
         if (PS == 5) {
           R.innerHTML = "YOU WON";
+          ps1.play();
         } else if (CS == 5) {
           R.innerHTML = "CPU WON";
+          ps2.play();
         } else if (c == 0) {
           CS = CS;
           PS = PS;
@@ -141,8 +148,10 @@
         C2.innerHTML = choice[c];
         if (PS == 5) {
           R.innerHTML = "YOU WON";
+          ps1.play();
         } else if (CS == 5) {
           R.innerHTML = "CPU WON";
+          ps2.play();
         } else if (c == 1) {
           CS = CS;
           PS = PS;
@@ -164,8 +173,10 @@
         C2.innerHTML = choice[c];
         if (PS == 5) {
           R.innerHTML = "YOU WON";
+          ps1.play();
         } else if (CS == 5) {
           R.innerHTML = "CPU WON";
+          ps2.play();
         } else if (c == 2) {
           CS = CS;
           PS = PS;
