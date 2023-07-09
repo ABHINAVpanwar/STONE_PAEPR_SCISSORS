@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STONE PAPER SCISSORS GAME</title>
+    <style>
+      * {
+        background-color: whitesmoke;
+      }
+      .s1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .choice {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .choice h2 {
+        padding-bottom: 40px;
+      }
+
+      #P {
+        color: black;
+      }
+
+      #C {
+        color: black;
+      }
+
+      #C2 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #C2 a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+      }
+
+      #result {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        color: black;
+      }
+
+      .s {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .u {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      img {
+        height: 100px;
+        width: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      #images {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="s1">
+      <div class="s">
+        <h1 class="u">YOU</h1>
+        <h1 id="P">0</h1>
+      </div>
+      <div class="s">
+        <h1 class="u">CPU</h1>
+        <h1 id="C">0</h1>
+      </div>
+      <h2 id="C1">CPU</h2>
+      <div class="choice"></div>
+        <div id="images">
+          <img src="IMG/STONE.png" alt="" id="x" />
+          <img src="IMG/PAPER.png" alt="" id="y" />
+          <img src="IMG/SCISSORS.png" alt="" id="z" />
+        </div>
+      </div>
+      <div id="result">
+        <h1 id="won">5 POINTS</h1>
+      </div>
+    </section>
+    <script>
+      let C2 = document.getElementById("C1");
+      let P1 = document.getElementById("P");
+      let C1 = document.getElementById("C");
+      let R = document.getElementById("won");
+      let CS = 0;
+      let PS = 0;
+      choice = ["STONE", "PAPER", "SCISSORS"];
+
+      document.querySelector("#x").addEventListener("click", function () {
+        let c = Math.floor(Math.random() * choice.length);
+        C2.innerHTML = choice[c];
+        if (PS == 5) {
+          R.innerHTML = "YOU WON";
+        } else if (CS == 5) {
+          R.innerHTML = "CPU WON";
+        } else if (c == 0) {
+          CS = CS;
+          PS = PS;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        } else if (c == 1) {
+          CS = CS + 1;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        } else if (c == 2) {
+          PS = PS + 1;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        }
+      });
+
+      document.querySelector("#y").addEventListener("click", function () {
+        let c = Math.floor(Math.random() * choice.length);
+        C2.innerHTML = choice[c];
+        if (PS == 5) {
+          R.innerHTML = "YOU WON";
+        } else if (CS == 5) {
+          R.innerHTML = "CPU WON";
+        } else if (c == 1) {
+          CS = CS;
+          PS = PS;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        } else if (c == 2) {
+          CS = CS + 1;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        } else if (c == 0) {
+          PS = PS + 1;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        }
+      });
+
+      document.querySelector("#z").addEventListener("click", function () {
+        let c = Math.floor(Math.random() * choice.length);
+        C2.innerHTML = choice[c];
+        if (PS == 5) {
+          R.innerHTML = "YOU WON";
+        } else if (CS == 5) {
+          R.innerHTML = "CPU WON";
+        } else if (c == 2) {
+          CS = CS;
+          PS = PS;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        } else if (c == 0) {
+          CS = CS + 1;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        } else if (c == 1) {
+          PS = PS + 1;
+          P1.innerHTML = PS;
+          C1.innerHTML = CS;
+        }
+      });
+    </script>
+  </body>
+</html>
